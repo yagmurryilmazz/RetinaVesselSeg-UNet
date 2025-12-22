@@ -28,7 +28,7 @@ Tıbbi görüntü segmentasyonunda "Accuracy" metriği, arka planın (siyah piks
 * **Genelleme Yeteneği:** Veri artırma (Augmentation) teknikleri sayesinde modelin farklı fundus kameralarından gelen görüntülere karşı gürbüz (robust) bir performans sergilemesini sağladım.
 
 ### 🎓 Akademik Sonuç
-Bu çalışma, derin öğrenme tekniklerinin klinik karar destek sistemlerinde kullanılabilirliğini doğrulamaktadır. Modelim, kılcal damar düzeyindeki detayları yakalayarak manuel segmentasyon ihtiyacını ortadan kaldıran bir performans sergilemektedir.
+İlgili çalışma, derin öğrenme tekniklerinin klinik karar destek sistemlerinde kullanılabilirliğini doğrulamaktadır. Modelim, kılcal damar düzeyindeki detayları yakalayarak manuel segmentasyon ihtiyacını ortadan kaldıran bir performans sergilemektedir.
 
 ---
 
