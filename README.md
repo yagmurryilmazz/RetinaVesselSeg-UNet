@@ -2,7 +2,7 @@
 
 ---
 
-## 🇹🇷 TÜRKÇE: Proje Detaylı Anlatımı
+## 🇹🇷 
 
 ### Genel Bakış
 Proje kapsamında, fundus anjiyografi görüntülerinden damar ağını (vascular network) otomatik olarak ayırt edebilen, yüksek hassasiyetli bir derin öğrenme modeli geliştirdim. Çalışmamın temel odağı; diyabetik retinopati ve hipertansiyon gibi sistemik hastalıkların dijital biyobelirteçlerini analiz etmek için güvenilir bir ön aşama segmentasyonu sağlamaktır.
@@ -32,7 +32,7 @@ Bu çalışma, derin öğrenme tekniklerinin klinik karar destek sistemlerinde k
 
 ---
 
-## 🇺🇸 ENGLISH: Detailed Project Description
+## 🇺🇸 
 
 ### Overview
 Within the scope of this project, I developed a high-precision deep learning model capable of automatically segmenting the vascular network from fundus angiography images. The primary focus of my work is to provide a reliable pre-processing segmentation to analyze digital biomarkers of systemic diseases such as diabetic retinopathy and hypertension.
