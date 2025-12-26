@@ -112,6 +112,8 @@ Tıbbi segmentasyonda sınıf dengesizliği nedeniyle yalnızca accuracy yanılt
 
 <div align="center">
 
+---
+
 # 👁️ DeepRetina  
 ### Retinal Vessel Segmentation
 
