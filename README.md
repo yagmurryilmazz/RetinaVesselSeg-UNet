@@ -1,7 +1,7 @@
 <div align="center">
 
 # 👁️ DeepRetina  
-### Retinal Damar Segmentasyonu / Retinal Vessel Segmentation
+### Retinal Damar Segmentasyonu 
 
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-informational)](#)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.x-informational)](#)
@@ -36,14 +36,24 @@ Yüksek hassasiyetli **retinal damar ağı segmentasyonu** için **U-Net tabanl�
 ### 1) Veri Seti (DRIVE)
 DRIVE dataset (Kaggle) üzerinden indirilebilir:
 
-- **DRIVE Dataset Download (Kaggle):** `KAGGLE_LINKINI_BURAYA_YAPISTIR`
-
-> Örnek format:  
-> `https://www.kaggle.com/datasets/...`
+- **DRIVE Dataset Download (Kaggle):** `(https://www.kaggle.com/code/ipythonx/medicai-retinal-vessel-segmentation-with-gradcam)`
+- 
 
 ### 2) Bağımlılıklar
+
 ```bash
 pip install tensorflow opencv-python numpy pillow scikit-learn
+
+## 📁 Klasör Yapısı
+```text
+├── DRIVE/                  # Orijinal Veri Seti
+│   ├── training/           # Eğitim (images + 1st_manual mask)
+│   └── test/               # Test verileri
+├── Modeller/               # En iyi model ağırlıkları (.keras)
+├── Tahminler/              # Model çıktıları / tahmin görselleri
+├── main.ipynb              # Ana eğitim + tahmin notebook
+└── README.md               # Dokümantasyon
+---
 
 ## 🚀 Çalıştırma
 1. `main.ipynb` dosyasını aç  
@@ -58,12 +68,6 @@ pip install tensorflow opencv-python numpy pillow scikit-learn
 ## 🇹🇷 Proje Özeti (TR)
 Bu projede, **fundus anjiyografi** görüntülerinden damar ağını otomatik ayırt eden, yüksek hassasiyetli bir **derin öğrenme segmentasyon modeli** geliştirdim.  
 Amaç; klinik karar destek sistemlerinde kullanılabilecek, **güvenilir bir damar segmentasyonu** üretmektir.
-
----
-
-## 🇺🇸 Project Overview (EN)
-In this project, I developed a high-precision **deep learning model** to automatically segment the vascular network from **fundus angiography** images.  
-The goal is to provide a reliable pre-processing segmentation for **clinical decision support** and digital biomarker analysis.
 
 ---
 
@@ -98,18 +102,107 @@ Tıbbi segmentasyonda sınıf dengesizliği nedeniyle yalnızca accuracy yanılt
 
 ---
 
-## 📁 Klasör Yapısı
-```text
-├── DRIVE/                  # Orijinal Veri Seti
-│   ├── training/           # Eğitim (images + 1st_manual mask)
-│   └── test/               # Test verileri
-├── Modeller/               # En iyi model ağırlıkları (.keras)
-├── Tahminler/              # Model çıktıları / tahmin görselleri
-├── main.ipynb              # Ana eğitim + tahmin notebook
-└── README.md               # Dokümantasyon
-
 
 ## 📌 Notlar
 - Accuracy tek başına segmentasyonda yanıltıcı olabilir (arka plan baskınlığı).
 - Dice/IoU gibi metrikler daha anlamlıdır.
 - Patch-based yaklaşım, küçük veri setlerinde genelde ciddi fark yaratır.
+
+<div align="center">
+
+# 👁️ DeepRetina  
+### Retinal Vessel Segmentation
+
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-informational)](#)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.x-informational)](#)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-informational)](#)
+[![Task](https://img.shields.io/badge/Task-Segmentation-blue)](#)
+[![Dataset](https://img.shields.io/badge/Dataset-DRIVE-green)](#)
+
+A **U-Net-based deep learning project** for high-precision **retinal vessel segmentation**.  
+It provides a reliable **pre-processing segmentation** to analyze **digital biomarkers** of systemic diseases (e.g., diabetic retinopathy, hypertension).
+
+</div>
+
+---
+
+## 🔎 Table of Contents
+- [🧰 Installation](#-installation)
+- [🇺🇸 Project Overview (EN)](#-project-overview-en)
+- [🧠 Methodology](#-methodology)
+- [🖼️ Preprocessing](#️-preprocessing)
+- [📈 Performance](#-performance)
+- [📁 Project Structure](#-project-structure)
+- [📌 Notes](#-notes)
+
+---
+
+## 🧰 Installation
+
+### 1) Dataset (DRIVE)
+The DRIVE dataset (Kaggle) can be accessed here:
+
+- **DRIVE Dataset Download (Kaggle):** `(https://www.kaggle.com/code/ipythonx/medicai-retinal-vessel-segmentation-with-gradcam)`
+
+### 2) Dependencies
+```bash
+pip install tensorflow opencv-python numpy pillow scikit-learn
+
+## 📁 Project Structure
+```text
+├── DRIVE/                  # Original Dataset Folder
+│   ├── training/           # Training set (images + 1st_manual masks)
+│   └── test/               # Test set
+├── Modeller/               # Best model weights (.keras)
+├── Tahminler/              # Model outputs / predictions
+├── main.ipynb              # Main training + inference notebook
+└── README.md               # Documentation
+
+---
+## 🚀 Run
+1. Open `main.ipynb`  
+2. Update the file paths according to your environment  
+3. Run the cells sequentially  
+4. Outputs:
+   - Model: `Modeller/`
+   - Predictions: `Tahminler/`
+
+---
+
+
+## 🇺🇸 Project Overview (EN)
+In this project, I developed a high-precision **deep learning model** to automatically segment the vascular network from **fundus angiography** images.  
+The goal is to provide a reliable pre-processing segmentation for **clinical decision support** and digital biomarker analysis.
+
+---
+
+## 🧠 Methodology
+### 🛰️ Architecture: U-Net
+The project uses **U-Net**, one of the gold standards in medical image segmentation.
+
+- **Encoder (Contracting Path):** Convolutional layers capture semantic context  
+- **Decoder (Expanding Path):** High-resolution reconstruction via **skip connections** to preserve spatial details
+
+---
+## 🖼️ Preprocessing
+To improve convergence and accuracy:
+
+- **Green Channel Isolation:** Process the channel with the highest vessel contrast  
+- **CLAHE (Contrast Optimization):** Reduce illumination differences and highlight micro-vessels  
+- **Patch-Based Processing:** Use overlapping **64×64** patches (sliding window) to handle limited data and learn local textures
+
+---
+## 📈 Performance
+In medical segmentation, pixel accuracy can be misleading due to class imbalance (background dominance). Therefore, the main focus is:
+
+- **Dice Coefficient (F1-Score)**
+- Trained using **Dice Loss** to directly maximize overlap
+
+**Summary Results:**
+- **96%+ Pixel Accuracy**
+- **~80% Dice Score range**
+- Strong performance on **DRIVE** despite limited data, thanks to **patch-based training + heavy augmentation**
+
+---
+
+
