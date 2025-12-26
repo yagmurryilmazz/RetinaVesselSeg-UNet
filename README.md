@@ -42,7 +42,8 @@ DRIVE dataset (Kaggle) üzerinden indirilebilir:
 ### 2) Bağımlılıklar
 
 ```bash
-pip install tensorflow opencv-python numpy pillow scikit-learn
+pip install tensorflow opencv-python numpy pillow scikit-learn 
+```
 
 ## 📁 Klasör Yapısı
 ```text
@@ -53,6 +54,7 @@ pip install tensorflow opencv-python numpy pillow scikit-learn
 ├── Tahminler/              # Model çıktıları / tahmin görselleri
 ├── main.ipynb              # Ana eğitim + tahmin notebook
 └── README.md               # Dokümantasyon
+```
 ---
 
 ## 🚀 Çalıştırma
@@ -147,6 +149,7 @@ The DRIVE dataset (Kaggle) can be accessed here:
 ### 2) Dependencies
 ```bash
 pip install tensorflow opencv-python numpy pillow scikit-learn
+```
 
 ## 📁 Project Structure
 ```text
@@ -157,7 +160,7 @@ pip install tensorflow opencv-python numpy pillow scikit-learn
 ├── Tahminler/              # Model outputs / predictions
 ├── main.ipynb              # Main training + inference notebook
 └── README.md               # Documentation
-
+```
 ---
 ## 🚀 Run
 1. Open `main.ipynb`  
@@ -203,6 +206,5 @@ In medical segmentation, pixel accuracy can be misleading due to class imbalance
 - **~80% Dice Score range**
 - Strong performance on **DRIVE** despite limited data, thanks to **patch-based training + heavy augmentation**
 
----
 
 
